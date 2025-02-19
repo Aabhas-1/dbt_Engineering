@@ -9,9 +9,9 @@ sources:
         identifier: Product
         tests:
           - unique:
-              column_name: ProductID
+              column_name: ProductKey
           - string_not_empty:
-              column_name: ProductID
+              column_name: ProductKey
 
       - name: Region
         identifier: Region
