@@ -1,0 +1,27 @@
+version: 2
+
+sources:
+  - name: dbo
+    database: dbt
+
+    tables:
+      - name: Product
+        identifier: Product
+
+      - name: Region
+        identifier: Region
+
+      - name: Reseller
+        identifier: Reseller
+
+      - name: SalesPerson
+        identifier: Salesperson
+
+      - name: SalesPersonRegion
+        identifier: SalespersonRegion
+
+      - name: sales  
+        identifier: Sales
+
+      - name: Targets
+        identifier: Targets

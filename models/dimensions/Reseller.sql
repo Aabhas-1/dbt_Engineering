@@ -2,4 +2,4 @@ SELECT [SalesTerritoryKey],
 			[Region],
 			[Country],
 			[Group]
-FROM [dbt].[dbo].[Region]
+FROM {{ source ('dbo','Reseller')}}

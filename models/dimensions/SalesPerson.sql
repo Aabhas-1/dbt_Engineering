@@ -3,4 +3,4 @@ SELECT  [EmployeeKey],
 			[Salesperson],
 			[Title],
 			[UPN]
-FROM [dbt].[dbo].[Salesperson]
+FROM {{ source ('dbo','SalesPerson')}}

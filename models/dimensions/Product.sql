@@ -5,4 +5,4 @@ SELECT [ProductKey],
 			[Category],
 			[Background Color Format],
 			[Font Color Format]
-FROM [dbt].[dbo].[Product]
+FROM {{ source ('dbo','Product')}}

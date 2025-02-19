@@ -1,3 +1,3 @@
 SELECT [EmployeeKey],
 			[SalesTerritoryKey]
-FROM [dbt].[dbo].[SalespersonRegion]
+FROM {{ source ('dbo','SalesPersonRegion')}}

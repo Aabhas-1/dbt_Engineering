@@ -7,4 +7,4 @@ SELECT [SalesOrderNumber],
 			[EmployeeKey],
 			[SalesTerritoryKey],
 			[Quantity]
-FROM [dbt].[dbo].[Sales]
+FROM {{ source ('dbo','sales')}}
