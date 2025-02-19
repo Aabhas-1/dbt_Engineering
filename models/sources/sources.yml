@@ -8,7 +8,7 @@ sources:
       - name: Product
         identifier: Product
         columns:
-          - name: ProductKey
+          - name: Product
             tests:
               - string_not_empty
 
