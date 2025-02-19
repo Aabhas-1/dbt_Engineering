@@ -7,21 +7,27 @@ sources:
     tables:
       - name: Product
         identifier: Product
+        tests:
+          - unique:
+              column_name: ProductID
+          - string_not_empty:
+              column_name: ProductID
 
       - name: Region
         identifier: Region
-
+        
       - name: Reseller
         identifier: Reseller
-
+        
       - name: SalesPerson
         identifier: Salesperson
-
+        
       - name: SalesPersonRegion
         identifier: SalespersonRegion
-
-      - name: sales  
+        
+      - name: sales
         identifier: Sales
-
+        
       - name: Targets
         identifier: Targets
+
