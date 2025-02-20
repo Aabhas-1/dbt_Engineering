@@ -5,5 +5,6 @@ SELECT [ProductKey],
 			[Category],
 			[Background Color Format],
 			[Font Color Format],
+            [isActive],
             [UpdatedAt]
 FROM {{ source ('dbo','Product')}}

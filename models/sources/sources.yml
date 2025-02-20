@@ -6,29 +6,49 @@ sources:
 
     tables:
       - name: Product
+        description: This table has basic information about Products.
         identifier: Product
         columns:
           - name: Product
+            description: Primary Key
             tests:
               - string_not_empty
+          - name: isActive
+            description: "{{ doc('isActive_description') }}"
         freshness:
           warn_after: { count: 1, period: day }  
           error_after: { count: 3, period: day }  
         loaded_at_field: UpdatedAtTimestamp2  
+
       - name: Region
+        description: This table has information about Sales Territory.
         identifier: Region
+        columns:
+          - name: SalesTerritoryKey
+            description: Primary Key
 
       - name: Reseller
+        description: This table has information about Resellers.
         identifier: Reseller
+        columns:
+          - name: ResellerKey
+            description: Primary Key
 
       - name: SalesPerson
+        description: This table has information about Salesperson.
         identifier: Salesperson
+        columns:
+          - name: EmployeeKey
+            description: Primary Key
 
       - name: SalesPersonRegion
+        description: This table has information about SalesPerson deployed in each region.
         identifier: SalespersonRegion
 
       - name: sales
+        description: This table has information about Sales.
         identifier: Sales
 
       - name: Targets
+        description: This table has information about Salesperson Targets.
         identifier: Targets
