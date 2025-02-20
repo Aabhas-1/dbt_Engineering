@@ -1,4 +1,4 @@
-{% doc isActive_description %}
+{% docs isActive_description %}
 This column represents whether a product is active. It can have the following values:
 
 | Value | Meaning  |
