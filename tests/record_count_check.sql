@@ -1,7 +1,6 @@
-{# Jinja demo on developing testing code #}
 
 {% set expected_counts = {
-    'sales': 10,
+    'sales': 100000,
     'Product': 10,
     'Region': 10,
     'Reseller': 10,

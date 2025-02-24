@@ -1,0 +1,1 @@
+select SalesOrderNumber from {{ref("sales")}} where SalesOrderNumber is null
