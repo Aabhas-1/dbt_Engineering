@@ -6,49 +6,65 @@ sources:
 
     tables:
       - name: Product
-        description: This table has basic information about Products.
+        description: "This table has basic information about Products."
         identifier: Product
-        columns:
-          - name: Product
-            description: Primary Key
-            tests:
-              - string_not_empty
-          - name: isActive
-            description: "{{ doc('isActive_description') }}"
         freshness:
           warn_after: { count: 1, period: day }  
           error_after: { count: 3, period: day }  
         loaded_at_field: UpdatedAtTimestamp2  
 
+        columns:
+          - name: ProductKey  # Assuming this is the correct column name
+            description: "Primary Key"
+            tests:
+              - unique
+              - not_null
+
+          - name: isActive
+            description: "{{ doc('isActive_description') }}"
+
+        tests:
+          - dbt_expectations.expect_table_row_count_to_equal_other_table:
+              compare_model: ref('Product_deduplicate')
+
       - name: Region
-        description: This table has information about Sales Territory.
+        description: "This table has information about Sales Territory."
         identifier: Region
         columns:
           - name: SalesTerritoryKey
-            description: Primary Key
+            description: "Primary Key"
+            tests:
+              - unique
+              - not_null
 
       - name: Reseller
-        description: This table has information about Resellers.
+        description: "This table has information about Resellers."
         identifier: Reseller
         columns:
           - name: ResellerKey
-            description: Primary Key
+            description: "Primary Key"
+            tests:
+              - unique
+              - not_null
 
       - name: SalesPerson
-        description: This table has information about Salesperson.
+        description: "This table has information about Salesperson."
         identifier: Salesperson
         columns:
           - name: EmployeeKey
-            description: Primary Key
+            description: "Primary Key"
+            tests:
+              - unique
+              - not_null
 
       - name: SalesPersonRegion
-        description: This table has information about SalesPerson deployed in each region.
+        description: "This table has information about SalesPerson deployed in each region."
         identifier: SalespersonRegion
 
       - name: sales
-        description: This table has information about Sales.
+        description: "This table has information about Sales."
         identifier: Sales
 
       - name: Targets
-        description: This table has information about Salesperson Targets.
+        description: "This table has information about Salesperson Targets."
         identifier: Targets
